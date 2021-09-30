@@ -36,6 +36,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
             body: JSON.stringify({ firstCategory: page.id }),
         });
         const menu: MenuItem[] = await resMenu.json();
+        console.log(menu);
         paths = paths.concat(menu.flatMap((m) => m.pages.map(p => `/${page.route}/${p.alias}`)))
     }
     return {
