@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: .
+        working-directory: ./top-api
 
     steps:
       - name: Checkout 🛎️
@@ -26,12 +26,13 @@ jobs:
       - run: npm install
       - run: npm run build
         env:
-            CI: true
+          CI: true
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BASE_BRANCH: master
           BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: src/out # The folder the action should deploy.
+          FOLDER: ./ # The folder the action should deploy.
           CLEAN: true # Automatically remove deleted files from the deploy branch
