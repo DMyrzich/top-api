@@ -1,0 +1,95 @@
+.addReview {
+    display: grid;
+    grid-template-columns: auto auto 1fr auto;
+    grid-template-areas:
+        "avtName avtTitle . mark"
+        "avtText avtText avtText avtText"
+        "submit moderation moderation moderation"
+        "success success success success"
+    ;
+    gap: 30px;
+    padding: 30px;
+    align-items: center;
+    font-size: 14px;
+    line-height: 24px;
+}
+
+.mark {
+    grid-area: mark;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    white-space: nowrap;
+}
+
+.submit {
+    grid-area: submit;
+}
+
+.moderation {
+    grid-area: moderation;
+}
+
+.avtName {
+    grid-area: avtName;
+}
+
+.avtTitle {
+    grid-area: avtTitle;
+}
+
+.avtText {
+    grid-area: avtText;
+}
+
+.success {
+    grid-area: success;
+    background: var(--green-light);
+    border-radius: 5px;
+    position: relative;
+    padding: 20px;
+}
+
+.successTitle {
+    font-weight: bold;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+@media screen and (max-width: 1200px) {
+    .addReview {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "avtName avtTitle"
+            "avtText avtText"
+            "mark mark"
+            "moderation moderation"
+            "submit submit"
+            "success success"
+        ;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .addReview {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "avtName"
+            "avtTitle"
+            "avtText"
+            "mark"
+            "moderation"
+            "submit"
+            "success"
+        ;
+    }
+}
