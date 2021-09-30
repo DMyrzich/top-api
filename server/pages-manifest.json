@@ -1,0 +1,11 @@
+{
+  "/[type]/[alias]": "pages/[type]/[alias].js",
+  "/[type]": "pages/[type].js",
+  "/_app": "pages/_app.js",
+  "/": "pages/index.js",
+  "/search": "pages/search.js",
+  "/_error": "pages/_error.js",
+  "/_document": "pages/_document.js",
+  "/ru/500": "pages/ru/500.html",
+  "/ru/404": "pages/ru/404.html"
+}
